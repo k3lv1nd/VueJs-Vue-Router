@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import about from '../components/about.vue'
 import departments from '../components/departments.vue'
+import api from '../components/api.vue'
+import Joke from '../components/joke.vue'
 
 
 Vue.use(Router)
@@ -23,9 +25,17 @@ export default new Router({
         path: '/departments',
           name: 'departments',
           component: departments
+      },
+      {
+          path: '/api',
+          name: 'api',
+          component: api
+      },
+      {
+          path: '/api/joke/:id',
+          name: 'jokes',
+          component: Joke
       }
-
-
 
   ]}
 )

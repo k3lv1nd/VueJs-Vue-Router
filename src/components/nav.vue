@@ -11,7 +11,7 @@
             <router-link :to="{name: 'departments'}">departments</router-link>
         </div>
         <div>
-           Storyline
+            <router-link :to="{name: 'api'}">Api</router-link>
         </div>
         <div>
             Contacts

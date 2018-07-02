@@ -28,7 +28,7 @@
         data: function () {
             return {
                 componentList: [Softwaredev, Networking, ITsupport],
-                selectedComponent: null
+                selectedComponent: 'Softwaredev'
             }
         }
     }
