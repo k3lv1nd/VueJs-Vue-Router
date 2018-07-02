@@ -1,6 +1,16 @@
 <template>
   <div class="HelloWorld">
     <h1>{{msg}}</h1>
+    <form>
+    <label>Email</label>
+    <input type="text" name="email" placeholder="Enter Email"><br>
+    <label>Username</label>
+    <input type="text" name="Username" placeholder="Enter Username"><br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter Password"><br>
+    </form>
+    <small>Already have an Account, Log in Here</small>
+
 
   </div>
 </template>
@@ -10,7 +20,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'I am the code boss!'
+      msg: 'Register with us to become a member'
     }
   }
 }

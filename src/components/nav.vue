@@ -8,7 +8,7 @@
             <router-link :to="{name: 'About'}">About us</router-link>
         </div>
         <div>
-            History
+            <router-link :to="{name: 'departments'}">departments</router-link>
         </div>
         <div>
            Storyline
@@ -29,7 +29,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: -60px;
-        background: #eee;
+        background: #0f9152;
         padding: 10px;
     }
 
