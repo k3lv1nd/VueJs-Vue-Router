@@ -7,11 +7,14 @@ Vue.use(Vuex);
 
 const state = {
     jokes: [],
-        loading: false
+    loading: false,
+    user:''
+
 };
 
 const getters = {
     jokes: state => state.jokes,
+    user: state=>state.user
 };
 
 const mutations = {
@@ -26,6 +29,9 @@ const mutations = {
             }, () => {
 
             })
+    },
+    ADD_USER(state, name){
+        state.user = name
     }
 };
 

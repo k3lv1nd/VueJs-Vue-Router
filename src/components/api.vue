@@ -7,15 +7,23 @@
         computed: {
             ...mapGetters({
                 jokes: 'jokes',
-                loading: 'loading'
+                loading: 'loading',
+                user: 'user'
             })
         },
 
         methods: {
             getJokes: function () {
                this.$store.commit('GET_JOKES');
+            },
+            addUser: function () {
+                if(this.name != '') {
+                    this.$store.commit('ADD_USER', this.name)
+                }
+
             }
         },
+
 
         mounted() {
             this.getJokes();
@@ -28,7 +36,10 @@
         <h1>This is the api demo page</h1>
         <div id="app">
             <header>
-                <span>Handling Ajax Request with Axios in Vue</span>
+                <span>Handling Ajax Request with Axios in Vue</span><br>
+                <label>Enter your Username</label>
+                <input v-model="name" type="text">
+                <button @click="addUser">Login</button>
             </header>
             <main>
                 <h2>Click the button to get Random jokes</h2>

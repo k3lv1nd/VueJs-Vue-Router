@@ -1,11 +1,12 @@
 <template>
     <div class="about">
-        <h1>this is the about page</h1>
-               
+        <h1>You are Logged in as  {{user}}.</h1>
+
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default{
         name: 'about',
         data () {
@@ -20,8 +21,16 @@
                 },
                 reloads (){
                     return this.$store.getters.getReload;
-                }
+                },
+                ...mapGetters({
+                    user: 'user'
+                })
             },
+        methods : {
+            getLoggeninUser(){
+                return this.$store.user
+            }
+        },
             created: function(){
                 this.$store.commit('increment');
             },
