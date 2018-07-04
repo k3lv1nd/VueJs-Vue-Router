@@ -1,6 +1,8 @@
 <template>
     <div class="about">
-        <h1>You are Logged in as  {{user}}.</h1>
+        <h1>You are Logged in as  {{user}}.</h1><br>
+        <p>We are aware that you work at {{details.company}} located in {{details.location}} as a {{details.occupation}}</p>
+
 
     </div>
 </template>
@@ -23,7 +25,8 @@
                     return this.$store.getters.getReload;
                 },
                 ...mapGetters({
-                    user: 'user'
+                    user: 'user',
+                    details: 'details'
                 })
             },
         methods : {

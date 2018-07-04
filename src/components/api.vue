@@ -8,10 +8,18 @@
             ...mapGetters({
                 jokes: 'jokes',
                 loading: 'loading',
-                user: 'user'
+                user: 'user',
+                company_details: 'details'
             })
         },
+        data() {
+            return {
+                details: {
+                },
+            }
 
+
+        },
         methods: {
             getJokes: function () {
                this.$store.commit('GET_JOKES');
@@ -21,7 +29,10 @@
                     this.$store.commit('ADD_USER', this.name)
                 }
 
-            }
+            },
+            adddetails: function (){
+                this.$store.commit('ADD_DETAILS', this.details)
+            },
         },
 
 
@@ -37,9 +48,20 @@
         <div id="app">
             <header>
                 <span>Handling Ajax Request with Axios in Vue</span><br>
+
                 <label>Enter your Username</label>
-                <input v-model="name" type="text">
-                <button @click="addUser">Login</button>
+                <!--<input v-model="name" type="text">-->
+                <button @click="addUser">Login</button><br>
+                <p>Enter  the following required details here </p>
+                <form action="">
+                    <label>Company</label><input type="text" v-model="details.company"><br>
+                    <label>Location</label><input type="text" v-model="details.location"><br>
+                    <label>Occupation</label><input type="text" v-model="details.occupation"><br>
+                    <label>Level</label><input type="text" v-model="details.level"><br>
+                    <button  @click='adddetails'>Submit</button>
+
+
+                </form>
             </header>
             <main>
                 <h2>Click the button to get Random jokes</h2>

@@ -5,6 +5,7 @@ import about from '../components/about.vue'
 import departments from '../components/departments.vue'
 import api from '../components/api.vue'
 import Joke from '../components/joke.vue'
+import List from '@/components/List'
 
 
 Vue.use(Router)
@@ -35,6 +36,11 @@ export default new Router({
           path: '/api/joke/:id',
           name: 'jokes',
           component: Joke
+      },
+      {
+          path: '/list',
+          name: 'list',
+          component : List
       }
 
   ]}
